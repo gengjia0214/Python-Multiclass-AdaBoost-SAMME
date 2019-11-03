@@ -1,4 +1,8 @@
-# SAMME_Multiclass_AdaBoost
+# SAMME_Multiclass_AdaBoost (Under Development)
+
+## Dev Log
+
+11/02/19: Implement the main methods. Still need to test.
 
 SAMME [1] is a multi-class adaboost algorithm. 
 
