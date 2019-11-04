@@ -62,7 +62,7 @@ class SAMME:
             weighted_learner_error = np.sum(is_wrong * self.entry_weights)/self.entry_weights.sum()
 
             # compute alpha, if the learner is not qualified, set to 0
-            self.learner_weights[learner_idx] = max(0, np.log(1/weighted_learner_error - 1) + np.log(self.num_cats - 1))
+            self.learner_weights[learner_idx] = max(0, np.log(1/(weighted_learner_error + 1e-6) - 1) + np.log(self.num_cats - 1))
             alpha_arr = np.full((n,), fill_value=self.learner_weights[learner_idx], dtype=np.float32)
 
             # update entry weights, prediction made by unqualified learner will not update the entry weights
