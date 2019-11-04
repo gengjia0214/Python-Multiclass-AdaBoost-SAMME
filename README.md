@@ -7,6 +7,8 @@ SAMME [1] is a multi-class adaboost algorithm.
 
 11/02/19: Implement the main methods. Still need to test.
 
+11/03/19: Added a small number to prevent possible divide by zero case
+
 
 ## Reference
 
