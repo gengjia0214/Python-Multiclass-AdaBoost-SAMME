@@ -1,5 +1,12 @@
 # SAMME - Multiclass AdaBoost (Under Development)
 
+@author: Jia Geng
+
+@email: jxg570@miami.edu
+
+@website: https://www.linkedin.com/in/jia-geng/
+
+## Introduction
 
 SAMME [1] is a multi-class adaboost algorithm. 
 
