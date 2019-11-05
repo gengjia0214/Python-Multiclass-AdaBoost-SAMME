@@ -1,5 +1,14 @@
 import numpy as np
 
+"""
+@author: Jia Geng
+@email: jxg570@miami.edu
+
+Dev. Log:
+
+11/02/19: Implement the main methods. Still need to test.
+11/03/19: Added a small number to prevent possible divide by zero case
+"""
 
 class SAMME:
     """
@@ -35,6 +44,7 @@ class SAMME:
         :return: void
         """
 
+        print("\nStart training SAMME..")
         # initialize the weights for each data entry
         n, m = len(train_data), len(learners)
         self.entry_weights = np.full((n,), fill_value=1/n, dtype=np.float32)
@@ -62,15 +72,16 @@ class SAMME:
             weighted_learner_error = np.sum(is_wrong * self.entry_weights)/self.entry_weights.sum()
 
             # compute alpha, if the learner is not qualified, set to 0
-            self.learner_weights[learner_idx] = max(0, np.log(1/(weighted_learner_error + 1e-6) - 1) + np.log(self.num_cats - 1))
+            self.learner_weights[learner_idx] = max(0, np.log(1/(weighted_learner_error + 1e-6) - 1) + np.log(
+                self.num_cats - 1))
             alpha_arr = np.full((n,), fill_value=self.learner_weights[learner_idx], dtype=np.float32)
-
             # update entry weights, prediction made by unqualified learner will not update the entry weights
             self.entry_weights = self.entry_weights * np.exp(alpha_arr * is_wrong)
             self.entry_weights = self.entry_weights/self.entry_weights.sum()
 
         # normalize the learner weights
         self.learner_weights = self.learner_weights/self.learner_weights.sum()
+        print("Training completed.")
 
     def predict(self, X):
         """
