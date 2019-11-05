@@ -1,4 +1,4 @@
-# SAMME_Multiclass_AdaBoost (Under Development)
+# SAMME - Multiclass AdaBoost (Under Development)
 
 
 SAMME [1] is a multi-class adaboost algorithm. 
