@@ -1,5 +1,4 @@
-# SAMME - Multiclass AdaBoost (Under Development)
-
+# SAMME - Multiclass AdaBoost 
 @author: Jia Geng
 
 @email: jxg570@miami.edu
