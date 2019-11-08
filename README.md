@@ -17,14 +17,13 @@ SAMME [1] is a multi-class adaboost algorithm.
 num_learner = 500
 num_cats = 5
 
-# prepare your data need to be in the following format
-# if data is image and it will be too larger to put them into list
-# you can modify the method so that it takes img file id and make it read the image file online
+# prepare your data. need to be in the following format
+# if your data are image and the image arrays are too larger to be put into list
+# you can modify the src code so that it takes img file id and make it read the image file online
 train_data = [(X, label), (X, label), (X, label), ...] 
 
-# put your weak learner into a list
-# your weak learner need to have a `.predict(X) -> label` method
-# if not, you need to modify the code to make it compatible
+# put your weak learner into a list. your weak learner need to have a `.predict(X) -> label` method
+# if not, you need to modify the src code to make it compatible
 weak_learners = [wl1, wl2, ...]  
 
 # construct the booster instance
